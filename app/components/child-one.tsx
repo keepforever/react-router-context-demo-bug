@@ -21,7 +21,7 @@ export const ChildOne = () => {
         }}
         className="bg-red-500 text-white px-4 py-2 rounded"
       >
-        Decrement Count
+        Decrement Count Foo
       </button>
     </div>
   );
