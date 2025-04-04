@@ -8,9 +8,16 @@ export async function loader(args: Route.LoaderArgs) {
   };
 }
 
-function CreativesContextBugDemoId({ loaderData }: Route.ComponentProps) {
-  const { count } = useContextBugDemoContext();
-
+function ContextBugDemo({ loaderData }: Route.ComponentProps) {
+  const { count, setCount } = useContextBugDemoContext();
+  console.group(
+    `%ccontext-bug.tsx`,
+    "color: #ffffff; font-size: 13px; font-weight: bold;"
+  );
+  console.log("\n", `count = `, count, "\n");
+  console.log("\n", `loaderData = `, loaderData, "\n");
+  console.log("\n", `setCount = `, setCount, "\n");
+  console.groupEnd();
   return (
     <div className="flex h-[calc(100vh-3rem)] flex-col">
       <ChildOne />
@@ -74,4 +81,4 @@ export const withContextBugDemoContext = <P extends object>(
   return WithContextBugDemoContext;
 };
 
-export default withContextBugDemoContext(CreativesContextBugDemoId);
+export default withContextBugDemoContext(ContextBugDemo);

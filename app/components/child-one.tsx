@@ -2,6 +2,15 @@ import { useContextBugDemoContext } from "~/routes/context-bug";
 
 export const ChildOne = () => {
   const { count, setCount } = useContextBugDemoContext();
+
+  console.group(
+    `%cchild-one.tsx`,
+    "color: #ff0000; font-size: 13px; font-weight: bold;"
+  );
+  console.log("\n", `count = `, count, "\n");
+  console.log("\n", `setCount = `, setCount, "\n");
+  console.groupEnd();
+
   return (
     <div>
       <h2>Child One</h2>
