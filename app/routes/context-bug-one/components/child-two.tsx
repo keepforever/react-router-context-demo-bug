@@ -8,6 +8,7 @@ export function ChildTwo() {
     <div>
       <h1>Hello ChildTwo </h1>
       <p>Count: {count}</p>
+      <p>hello</p>
     </div>
   );
 }
