@@ -1,33 +1,9 @@
 import { createContext, useContext, useState } from "react";
-import { ChildOne } from "~/components/child-one";
-import type { Route } from "./+types/context-bug.ts";
-
-export async function loader(args: Route.LoaderArgs) {
-  return {
-    hello: args.request.url,
-  };
-}
-
-function ContextBugDemo({ loaderData }: Route.ComponentProps) {
-  const { count, setCount } = useContextBugDemoContext();
-  console.group(
-    `%ccontext-bug.tsx`,
-    "color: #ffffff; font-size: 13px; font-weight: bold;"
-  );
-  console.log("\n", `count = `, count, "\n");
-  console.log("\n", `loaderData = `, loaderData, "\n");
-  console.log("\n", `setCount = `, setCount, "\n");
-  console.groupEnd();
-  return (
-    <div className="flex h-[calc(100vh-3rem)] flex-col">
-      <ChildOne />
-    </div>
-  );
-}
+import type { useContextBugOneUtils } from "./use-context-bug-one-utils";
 
 // Context
 const ContextBugDemoContext = createContext<
-  ReturnType<typeof useContextBugDemoUtils> | undefined
+  ReturnType<typeof useContextBugOneUtils> | undefined
 >(undefined);
 
 // Custom hook for utilities
@@ -80,5 +56,3 @@ export const withContextBugDemoContext = <P extends object>(
 
   return WithContextBugDemoContext;
 };
-
-export default withContextBugDemoContext(ContextBugDemo);

@@ -1,4 +1,5 @@
-import { useContextBugDemoContext } from "~/routes/context-bug";
+import { useContextBugDemoContext } from "~/routes/context-bug-one/context-bug-one-context";
+import { ChildTwo } from "./child-two";
 
 export const ChildOne = () => {
   const { count, setCount } = useContextBugDemoContext();
@@ -22,7 +23,7 @@ export const ChildOne = () => {
         }}
         className="bg-blue-500 text-white px-4 py-2 rounded"
       >
-        Increment Count
+        Increment Countx
       </button>
       <button
         onClick={() => {
@@ -32,6 +33,8 @@ export const ChildOne = () => {
       >
         Decrement Count Foo
       </button>
+
+      <ChildTwo />
     </div>
   );
 };
