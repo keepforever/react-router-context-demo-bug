@@ -1,14 +1,17 @@
-import { logObjectDetails } from "~/utils/misc";
 import { useContextBugDemoContext } from "../context-bug-one-context";
 
 export function ChildTwo() {
-  const { count } = useContextBugDemoContext();
+  const { count, setCount } = useContextBugDemoContext();
 
   return (
     <div>
-      <h1>Hello ChildTwo </h1>
+      <h1>Hello ChildTwo</h1>
       <p>Count: {count}</p>
-      <p>hello</p>
+      <div>
+        <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
+        <button onClick={() => setCount((prev) => prev - 1)}>Decrement</button>
+      </div>
+      foo bar baz
     </div>
   );
 }

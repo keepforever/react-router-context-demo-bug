@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import type { useContextBugOneUtils } from "./use-context-bug-one-utils";
+import { useContextBugOneUtils } from "./useContextBugOneUtils";
 
 // Context
 const ContextBugDemoContext = createContext<
@@ -7,20 +7,22 @@ const ContextBugDemoContext = createContext<
 >(undefined);
 
 // Custom hook for utilities
-function useContextBugDemoUtils() {
-  const [count, setCount] = useState(0);
+// function useContextBugOneUtils() {
+//   const [count, setCount] = useState(0);
+//   const resp = useCauseBugOne();
 
-  return {
-    count,
-    setCount,
-  };
-}
+//   return {
+//     count,
+//     setCount,
+//     resp,
+//   };
+// }
 
 // Context provider
 const ContextBugDemoProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const utils = useContextBugDemoUtils();
+  const utils = useContextBugOneUtils();
   return (
     <ContextBugDemoContext.Provider value={utils}>
       {children}
