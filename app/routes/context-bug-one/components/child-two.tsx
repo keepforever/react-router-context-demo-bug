@@ -11,7 +11,7 @@ export function ChildTwo() {
         <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
         <button onClick={() => setCount((prev) => prev - 1)}>Decrement</button>
       </div>
-      foo bar baz
+      foo bar baz anything
     </div>
   );
 }
