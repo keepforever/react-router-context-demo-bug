@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { useContextBugOneUtils } from "./useContextBugOneUtils";
+import { useQuery } from "@tanstack/react-query";
 
 // Context
 const ContextBugDemoContext = createContext<
@@ -58,3 +59,14 @@ export const withContextBugDemoContext = <P extends object>(
 
   return WithContextBugDemoContext;
 };
+
+export function useTodosQuery() {
+  return useQuery({
+    queryKey: ["todos"],
+    queryFn: async () => {
+      const res = await fetch("https://dummyjson.com/todos");
+      if (!res.ok) throw new Error("Network response was not ok");
+      return res.json();
+    },
+  });
+}

@@ -5,8 +5,8 @@ export const ChildOne = () => {
   const { count, setCount } = useContextBugDemoContext();
 
   return (
-    <div>
-      <h2>Child One</h2>
+    <div className="border-red-300 border-2 p-4 rounded mb-4">
+      <h2 className="text-2xl">Child One</h2>
       <p>This is the first child component.</p>
       <p>Count: {count}</p>
       <div>
